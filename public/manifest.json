@@ -1,9 +1,9 @@
 {
   "$schema": "https://json.schemastore.org/web-manifest-combined.json",
-  "name": "newTube",
-  "short_name": "newTube",
+  "name": "qwik-project-name",
+  "short_name": "Welcome to Qwik",
   "start_url": ".",
   "display": "standalone",
   "background_color": "#fff",
-  "description": "A Youtube clone"
+  "description": "A Qwik project app."
 }

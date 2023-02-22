@@ -1,37 +1,12 @@
-/* eslint-disable @typescript-eslint/no-unused-vars */
-import {
-  component$,
-  useClientEffect$,
-  useStore,
-  Resource,
-  useResource$,
-  useTask$,
-  useContext,
-} from "@builder.io/qwik";
+import { component$, useContext } from "@builder.io/qwik";
 import type { DocumentHead } from "@builder.io/qwik-city";
 import { NavBox } from "~/components/home/NavBox";
-import { isServer } from "@builder.io/qwik/build";
-import { fetcRelatedVideos } from "~/utils/fetch";
 import navbox from "~/utils/navbox";
 import { VideoCard } from "~/components/home/VideoCard";
-import { VideoResponse } from "~/utils/types";
 import { AppContext } from "~/contexts/AppProvider";
 
 export default component$(() => {
   const { videos } = useContext(AppContext);
-  // const data$ = useStore({
-  //   videos: [] as VideoResponse["contents"],
-  // });
-
-  // useTask$(async () => {
-  //   if (isServer) {
-  //     const data: VideoResponse = (await fetcRelatedVideos(
-  //       "kJQP7kiw5Fk"
-  //     )) as VideoResponse;
-  //     console.log(data?.contents[0]?.video.author.avatar);
-  //     data$.videos = data?.contents;
-  //   }
-  // });
 
   return (
     <div class={`w-full`}>

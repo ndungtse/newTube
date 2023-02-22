@@ -1,6 +1,6 @@
 import { component$ } from "@builder.io/qwik";
 import { useApp } from "~/contexts/AppProvider";
-import { Video } from "~/utils/types";
+import type { Video } from "~/utils/types";
 import { Comment } from "./Comment";
 
 export interface CommentsProps {

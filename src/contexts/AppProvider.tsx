@@ -2,7 +2,6 @@ import {
   component$,
   createContext,
   Slot,
-  useClientEffect$,
   useContext,
   useContextProvider,
   useStore,
@@ -10,7 +9,7 @@ import {
 } from "@builder.io/qwik";
 import { isServer } from "@builder.io/qwik/build";
 import { fetcRelatedVideos } from "~/utils/fetch";
-import { IPlayerState, VideoResponse } from "~/utils/types";
+import type { IPlayerState, VideoResponse } from "~/utils/types";
 
 interface AppStore {
   isDark: boolean;
@@ -40,22 +39,11 @@ export const AppProvider = component$(() => {
   });
   useContextProvider(AppContext, appState);
 
-  useClientEffect$(() => {
-    const sysTheme =
-      window.matchMedia &&
-      window.matchMedia("(prefers-color-scheme: dark)").matches;
-    if (sysTheme) {
-      // console.log("dark mode", appState);
-      // appState.isDark = true;
-    }
-  });
-
   useTask$(async () => {
     if (isServer) {
       const data: VideoResponse = (await fetcRelatedVideos(
         "kJQP7kiw5Fk"
       )) as VideoResponse;
-      console.log(data);
       appState.videos = data?.contents;
     }
   });

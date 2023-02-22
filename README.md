@@ -32,7 +32,7 @@ Inside your project, you'll see the following directory structure:
 
 ## Add Integrations and deployment
 
-Use the `yarn qwik add` command to add additional integrations. Some examples of integrations include: Cloudflare, Netlify or Express server, and the [Static Site Generator (SSG)](https://qwik.builder.io/qwikcity/static-site-generation/static-site-config/).
+Use the `yarn qwik add` command to add additional integrations. Some examples of integrations include: Cloudflare, Netlify or Express server, and the [Static Site Generator (SSG)](https://qwik.builder.io/qwikcity/guides/static-site-generation/).
 
 ```shell
 yarn qwik add # or `yarn qwik add`
@@ -70,10 +70,10 @@ This starter site is configured to deploy to [Vercel Edge Functions](https://ver
 
 ## Installation
 
-The adaptor will add a new `vite.config.ts` within the `adaptors/` directory, and a new entry file will be created, such as:
+The adaptor will add a new `vite.config.ts` within the `adapters/` directory, and a new entry file will be created, such as:
 
 ```
-└── adaptors/
+└── adapters/
     └── vercel-edge/
         └── vite.config.ts
 └── src/
@@ -90,7 +90,7 @@ To build the application for production, use the `build` command, this command w
 yarn build
 ```
 
-[Read the full guide here](https://github.com/BuilderIO/qwik/blob/main/starters/adaptors/vercel-edge/README.md)
+[Read the full guide here](https://github.com/BuilderIO/qwik/blob/main/starters/adapters/vercel-edge/README.md)
 
 ## Dev deploy
 

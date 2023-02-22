@@ -6,14 +6,13 @@
 
 # Development
 node_modules
-*.mp4
+
 # Cache
 .cache
 .mf
-.vscode
 .rollup.cache
 tsconfig.tsbuildinfo
-*.local
+
 # Logs
 logs
 *.log
@@ -24,6 +23,7 @@ pnpm-debug.log*
 lerna-debug.log*
 
 # Editor
+.vscode/*
 !.vscode/extensions.json
 .idea
 .DS_Store
@@ -39,3 +39,5 @@ lerna-debug.log*
 
 # Vercel
 .vercel
+temp_auto_push.bat
+temp_interactive_push.bat

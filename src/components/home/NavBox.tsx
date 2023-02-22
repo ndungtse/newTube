@@ -1,8 +1,9 @@
-import { Component, component$ } from "@builder.io/qwik";
-import { QwikifyProps } from "@builder.io/qwik-react";
-import { IconBaseProps } from "react-icons";
+import type { Component} from "@builder.io/qwik";
+import { component$ } from "@builder.io/qwik";
+import type { QwikifyProps } from "@builder.io/qwik-react";
+import type { IconBaseProps } from "react-icons";
 import { useApp } from "~/contexts/AppProvider";
-import { BoxProps } from "~/utils/navbox";
+import type { BoxProps } from "~/utils/navbox";
 
 export interface NavBoxProps {
   active: boolean;

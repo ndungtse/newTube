@@ -1,5 +1,5 @@
 import axios from "axios";
-import { Video, VideoResponse } from "./types";
+import type { Video, VideoResponse } from "./types";
 
 export const apiKey = import.meta.env.VITE_API_KEY;
 export const url = "https://youtube138.p.rapidapi.com.com";
@@ -29,7 +29,6 @@ export const fetcRelatedVideos = async (videoId: string) => {
   return axios
     .request(options)
     .then(function (response) {
-      console.log(response.data);
       return response.data as VideoResponse;
     })
     .catch(function (error) {

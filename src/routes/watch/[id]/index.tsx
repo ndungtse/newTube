@@ -1,5 +1,6 @@
 import { component$, useStore, useTask$ } from "@builder.io/qwik";
-import { DocumentHead, useLocation } from "@builder.io/qwik-city";
+import type { DocumentHead} from "@builder.io/qwik-city";
+import { useLocation } from "@builder.io/qwik-city";
 import { isServer } from "@builder.io/qwik/build";
 import { Comments } from "~/components/watch/Comments";
 // import { Player } from "~/components/watch/Player";
@@ -15,11 +16,9 @@ import {
 } from "~/integrations/react/icons";
 import { formatNumber } from "~/utils";
 import { getVideoDetails } from "~/utils/fetch";
-import { Video } from "~/utils/types";
-// import { useLocation } from '@builder.io/qwik-city';
+import type { Video } from "~/utils/types";
 
 export default component$(() => {
-  // const location = useLocation();
   const { isDark } = useApp();
   const data$ = useStore<{ video: Video | null }>({
     video: null,
@@ -45,7 +44,7 @@ export default component$(() => {
           <div class="tags flex items-center text-blue-600 font-semibold gap-x-3 text-sm">
             <span>#{data$.video?.category}</span>
           </div>
-          <span class="text-sm font-semibold mt-3">{data$.video?.title}</span>
+          <span class="text-sm font-semibold mt-3">{data$.video?.title??null}</span>
           <span class="opacity-75 text-sm mt-4">
             {formatNumber(Number(data$.video?.stats.views))} views
           </span>
@@ -86,7 +85,7 @@ export default component$(() => {
                 />
               </div>
               <div class="flex flex-col text-xs font-semibold">
-                <span>{data$.video?.author.title}</span>
+                <span>{data$.video?.author?.title??null}</span>
                 <span class="opacity-70">
                   {data$.video?.author?.stats?.subscribersText}
                 </span>
